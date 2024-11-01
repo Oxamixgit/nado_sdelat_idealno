@@ -1,102 +1,85 @@
+body {
+  display: grid;
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+h1 {
+  left: 50%;
+  font-size: 116px;
+  font-family: "Raleway-ExtraBold";
+  color: black;
+  line-height: 136.18px;
+  letter-spacing: 0.035em;
+}
+
+.page__heading {
+  grid-area: 1 / 1 / 2 / 2;
+  z-index: 1;
+  justify-self: center;
+  margin-top: 60px;
+}
+
+.span {
+  display: block;
+  text-align: center;
+}
+
+video {
+  grid-area: 1 / 1 / 2 / 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0 auto;
-  padding: 0;
 }
 
-html {
-  height: 100%;
-  margin: 0 auto;
-}
-
-.page {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  position: relative;
-  height: 100%;
-  min-width: 800px;
-  font-family: "Raleway", sans-serif;
-  z-index: 0;
-  background: rgba(254, 175, 232, 1);
-}
-
-.page::after {
-  content: " ";
-  display: grid;
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.3);
-  z-index: 2;
-}
-
-.page__heading::after {
-  display: inline-block;
-  padding-top: 270px;
-  content: " *";
-}
-
-.page__heading {
-  display: flex;
-  justify-content: center;
-  grid-column: 2/4;
-  grid-row: 1/2;
-  align-items: center;
-  padding-top: 60px;
-  max-width: 750px;
-  color: #000;
-  text-align: center;
-  font-family: "Raleway", sans-serif;
+.span_end::after {
+  content: "*";
+  color: black;
   font-size: 116px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
-  letter-spacing: 3.5px;
-  text-transform: uppercase;
-  margin: 0;
-  z-index: 3;
+  padding-left: 0.1em;
 }
 
-.page__heading:hover {
-  cursor: default;
-  color: rgba(76, 76, 76, 1);
+.page__heading:hover .span {
+  color: #4c4c4c;
+}
+
+.span_end:hover::after {
+  color: #4c4c4c;
 }
 
 .page__heading:hover::before {
-  position: absolute;
-  right: 20px;
-  top: 180px;
-  color: rgba(0, 0, 0, 1);
-  font-family: "Raleway", sans-serif;
-  font-size: 35px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 35px;
-  text-transform: none;
-  text-align: left;
-  letter-spacing: normal;
-  padding: 36px 44px;
-  border-radius: 20px;
-  border: 2px solid #000;
-  background: #fff;
-  box-shadow: 0 12px 0 0 currentColor;
-  z-index: 3;
-}
-
-.page__title:hover::before {
   content: "На самом деле нет.\AВажнее &mdash; научиться ошибаться.";
   white-space: pre;
-}
-
-.video {
-  display: grid;
-  object-fit: cover;
-  object-position: center;
+  font-family: "Raleway-Regular";
+  font-size: 35px;
+  font-weight: 400;
   position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
+  width: auto;
+  top: 180px;
+  right: 20px;
+  padding: 36px 44px;
+  background-color: white;
+  border-radius: 20px;
+  border: 2px solid #000;
+  z-index: 2;
+  letter-spacing: 0px;
+  line-height: 35px;
+  box-shadow: 0 12px 0 #000;
 }
